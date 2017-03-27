@@ -34,18 +34,19 @@ import retrofit2.http.QueryMap;
 import rx.Single;
 
 public interface RateBeerService {
-    Uri LOGIN        = Uri.parse("__login");
-    Uri BEER         = Uri.parse("__beer");
-    Uri SEARCH       = Uri.parse("__search");
-    Uri BARCODE      = Uri.parse("__barcode");
-    Uri TOP50        = Uri.parse("__top50");
-    Uri COUNTRY      = Uri.parse("__country");
-    Uri STYLE        = Uri.parse("__style");
-    Uri REVIEWS      = Uri.parse("__reviews");
-    Uri TICKS        = Uri.parse("__ticks");
-    Uri TICK_BEER    = Uri.parse("__tick_beer");
-    Uri BREWER       = Uri.parse("__brewer");
-    Uri BREWER_BEERS = Uri.parse("__brewer_beers");
+    Uri LOGIN         = Uri.parse("__login");
+    Uri BEER          = Uri.parse("__beer");
+    Uri SEARCH        = Uri.parse("__search");
+    Uri BARCODE       = Uri.parse("__barcode");
+    Uri TOP50         = Uri.parse("__top50");
+    Uri COUNTRY       = Uri.parse("__country");
+    Uri STYLE         = Uri.parse("__style");
+    Uri REVIEWS       = Uri.parse("__reviews");
+    Uri OWN_REVIEWS   = Uri.parse("__own_reviews");
+    Uri TICKS         = Uri.parse("__ticks");
+    Uri TICK_BEER     = Uri.parse("__tick_beer");
+    Uri BREWER        = Uri.parse("__brewer");
+    Uri BREWER_BEERS  = Uri.parse("__brewer_beers");
 
     @FormUrlEncoded
     @POST("/Signin_r.asp")
@@ -70,6 +71,9 @@ public interface RateBeerService {
 
     @GET("/json/gr.asp")
     Single<List<Review>> getReviews(@QueryMap Map<String, String> params);
+
+    @GET("/json/revs.asp")
+    Single<List<Beer>> getOwnBeerReviews(@QueryMap Map<String, String> params);
 
     @GET("/json/bt.asp")
     Single<List<Beer>> getTicks(@QueryMap Map<String, String> params);

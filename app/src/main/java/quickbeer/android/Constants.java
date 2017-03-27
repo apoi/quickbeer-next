@@ -61,6 +61,8 @@ public interface Constants {
 
         String REVIEW = "reviewFetcher";
 
+        String OWN_REVIEWS = "ownReviewsFetcher";
+
         String TICKS = "ticksFetcher";
 
         String TICK = "tickBeerFetcher";

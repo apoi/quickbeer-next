@@ -15,6 +15,7 @@
 
     <!-- Drawer menu -->
     <string name="menu_ticked_beers">Rated beers</string>
+    <string name="menu_reviewed_beers">Reviewed beers</string>
     <string name="menu_top_beers">Best of all</string>
     <string name="menu_top_by_country">By country</string>
     <string name="menu_top_by_beer_style">By beer style</string>

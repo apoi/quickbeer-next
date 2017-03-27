@@ -35,6 +35,7 @@ import quickbeer.android.features.list.fragments.BeersInCountryFragment;
 import quickbeer.android.features.list.fragments.BeersInStyleFragment;
 import quickbeer.android.features.list.fragments.BrewerListFragment;
 import quickbeer.android.features.list.fragments.CountryListFragment;
+import quickbeer.android.features.list.fragments.ReviewedBeersFragment;
 import quickbeer.android.features.list.fragments.StyleListFragment;
 import quickbeer.android.features.list.fragments.TickedBeersFragment;
 import quickbeer.android.features.list.fragments.TopBeersFragment;
@@ -74,6 +75,8 @@ public interface FragmentComponent {
     void inject(BrewerDetailsFragment brewerDetailsFragment);
 
     void inject(BrewerBeersFragment brewerBeersFragment);
+
+    void inject(ReviewedBeersFragment reviewedBeersFragment);
 
     void inject(TickedBeersFragment tickedBeersFragment);
 

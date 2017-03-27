@@ -39,6 +39,7 @@ import static io.reark.reark.utils.Preconditions.get;
 
 public class NetworkApi {
 
+    @NonNull
     private final RateBeerService rateBeerService;
 
     public NetworkApi(@NonNull OkHttpClient client,
@@ -53,58 +54,75 @@ public class NetworkApi {
         rateBeerService = retrofit.create(RateBeerService.class);
     }
 
+    @NonNull
     public Single<ResponseBody> login(String username, String password) {
         return rateBeerService
                 .login(username, password, Constants.LOGIN_DEFAULT_SAVE_INFO);
     }
 
+    @NonNull
     public Single<Beer> getBeer(Map<String, String> params) {
         return rateBeerService
                 .getBeer(params)
                 .map(list -> list.get(0)); // API returns a list of one beer
     }
 
+    @NonNull
     public Single<List<Beer>> search(Map<String, String> params) {
         return rateBeerService
                 .search(params);
     }
 
+    @NonNull
     public Single<List<Beer>> barcode(Map<String, String> params) {
         return rateBeerService
                 .barcode(params);
     }
 
+    @NonNull
     public Single<List<Beer>> getBeersInCountry(Map<String, String> params) {
         return rateBeerService
                 .topBeers(params);
     }
 
+    @NonNull
     public Single<List<Beer>> getBeersInStyle(Map<String, String> params) {
         return rateBeerService
                 .beersInStyle(params);
     }
 
+    @NonNull
     public Single<List<Review>> getReviews(Map<String, String> params) {
         return rateBeerService
                 .getReviews(params);
     }
 
+    @NonNull
+    public Single<List<Beer>> getOwnBeerReviews(Map<String, String> params) {
+        return rateBeerService
+                .getOwnBeerReviews(params);
+    }
+
+    @NonNull
     public Single<List<Beer>> getTicks(Map<String, String> params) {
         return rateBeerService
                 .getTicks(params);
     }
 
+    @NonNull
     public Single<ResponseBody> tickBeer(Map<String, String> params) {
         return rateBeerService
                 .tickBeer(params);
     }
 
+    @NonNull
     public Single<Brewer> getBrewer(Map<String, String> params) {
         return rateBeerService
                 .getBrewer(params)
                 .map(list -> list.get(0)); // API returns a list of one brewer
     }
 
+    @NonNull
     public Single<List<Beer>> getBrewerBeers(Map<String, String> params) {
         return rateBeerService
                 .getBrewerBeers(params);

@@ -15,6 +15,10 @@
                     android:id="@+id/nav_ticks"
                     android:icon="@drawable/ic_menu_ticked"
                     android:title="@string/menu_ticked_beers" />
+                <item
+                    android:id="@+id/nav_reviews"
+                    android:icon="@drawable/ic_menu_ticked"
+                    android:title="@string/menu_reviewed_beers" />
             </group>
         </menu>
     </item>

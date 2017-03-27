@@ -140,6 +140,12 @@ public final class DataStoreModule {
     }
 
     @Provides
+    static DataLayer.GetOwnBeerReviews provideGetOwnBeerReviews(
+            @NonNull DataLayer dataLayer) {
+        return dataLayer::getOwnBeerReviews;
+    }
+
+    @Provides
     static DataLayer.GetTickedBeers provideGetTickedBeers(
             @NonNull DataLayer dataLayer) {
         return dataLayer::getTickedBeers;

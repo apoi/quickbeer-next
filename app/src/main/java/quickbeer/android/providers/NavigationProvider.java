@@ -41,6 +41,7 @@ import quickbeer.android.features.list.fragments.BeerSearchFragment;
 import quickbeer.android.features.list.fragments.BeersInCountryFragment;
 import quickbeer.android.features.list.fragments.BeersInStyleFragment;
 import quickbeer.android.features.list.fragments.CountryListFragment;
+import quickbeer.android.features.list.fragments.ReviewedBeersFragment;
 import quickbeer.android.features.list.fragments.StyleListFragment;
 import quickbeer.android.features.list.fragments.TickedBeersFragment;
 import quickbeer.android.features.list.fragments.TopBeersFragment;
@@ -60,6 +61,7 @@ public final class NavigationProvider {
     public enum Page {
         HOME,
         TICKS,
+        REVIEWS,
         BEER_SEARCH,
         BARCODE_SEARCH,
         TOP_BEERS,
@@ -230,6 +232,8 @@ public final class NavigationProvider {
                 return Page.HOME;
             case R.id.nav_ticks:
                 return Page.TICKS;
+            case R.id.nav_reviews:
+                return Page.REVIEWS;
             case R.id.nav_best:
                 return Page.TOP_BEERS;
             case R.id.nav_countries:
@@ -249,6 +253,8 @@ public final class NavigationProvider {
                 return new HomeFragment();
             case TICKS:
                 return new TickedBeersFragment();
+            case REVIEWS:
+                return new ReviewedBeersFragment();
             case BEER_SEARCH:
                 return new BeerSearchFragment();
             case BARCODE_SEARCH:
